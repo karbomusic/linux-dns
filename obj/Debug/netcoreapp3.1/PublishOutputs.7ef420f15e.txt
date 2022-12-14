@@ -1,0 +1,5 @@
+C:\Users\karywa\source\repos\LinuxDnsQuery\bin\Debug\netcoreapp3.1\publish\LinuxDnsQuery.exe
+C:\Users\karywa\source\repos\LinuxDnsQuery\bin\Debug\netcoreapp3.1\publish\LinuxDnsQuery.dll
+C:\Users\karywa\source\repos\LinuxDnsQuery\bin\Debug\netcoreapp3.1\publish\LinuxDnsQuery.deps.json
+C:\Users\karywa\source\repos\LinuxDnsQuery\bin\Debug\netcoreapp3.1\publish\LinuxDnsQuery.runtimeconfig.json
+C:\Users\karywa\source\repos\LinuxDnsQuery\bin\Debug\netcoreapp3.1\publish\LinuxDnsQuery.pdb
