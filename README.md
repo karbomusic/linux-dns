@@ -11,10 +11,10 @@ Performs a single DNS query for yahoo.com
 Performs a single DNS query using the hostname of your choice. 
 
 #### __LinuxDnsQuery [hostname <iterations>]__ 
-Performs DNS ~n DNS queries for the chosen hostname. 
+Performs ~n DNS queries for the chosen hostname. 
 
 #### __LinuxDnsQuery [hostname <iterations> [delay]]__ 
-Performs DNS ~n DNS queries for the chosen hostname but introduces a configurable delay between queries.  
+Performs ~n DNS queries for the chosen hostname but introduces a configurable delay between queries.  
   
     
     
