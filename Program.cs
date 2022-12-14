@@ -15,13 +15,10 @@ namespace LinuxDnsQuery
         retry:
             try
             {
-
-
                 switch (args.Length)
                 {
 
                     case 0: // no args
-
                         doDnsQuery("yahoo.com");
                         break;
 
@@ -58,12 +55,12 @@ namespace LinuxDnsQuery
                     default: // no matching arg pattern, list usage
                         Console.WriteLine("Usage: LinuxDnsQuery with No args = yahoo.com with manual retry\r\nLinuxDnsQuery <hostname>\r\n LinuxDnsQuery <hostname iterations>\r\n LinuxDnsQuery <hostname> <iterations> <delay>");
                         break;
-
                 }
             }
             catch (Exception e)
             {
-                // something went wrong
+                // something went wrong. If we reproduce the issue,
+                // the code will fall into this catch statement.
                 Console.WriteLine(e.ToString());
             }
 
@@ -89,7 +86,6 @@ namespace LinuxDnsQuery
             {
                 Console.WriteLine("RR: {0}", addr);
             }
-
         }
     }
 }
