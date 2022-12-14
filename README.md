@@ -2,7 +2,7 @@
 
 This is a DNS query test app written in .net core v3.1 
 
-# Usage:
+## Usage:
 
 #### __LinuxDnsQuery__ (no arguments) 
 Performs a single DNS query for yahoo.com  
