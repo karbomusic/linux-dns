@@ -32,7 +32,7 @@ namespace LinuxDnsQuery
 
                         for (int i = 0; i < iterations; i++)
                         {
-                            Console.Write("Iteration: {0} ", i);
+                            Console.Write("Iteration: {0} ", i+1);
                             doDnsQuery(domain);
                         }
                         break;
@@ -45,7 +45,7 @@ namespace LinuxDnsQuery
                         Console.WriteLine("Running {0} queries for {1} with {2}ms delay...\r\n", iterations, domain, delay);
                         for (int i = 0; i < iterations; i++)
                         {
-                            Console.Write("Iteration: {0} waiting {1} ms per interation.", i, delay);
+                            Console.Write("Iteration: {0} waiting {1} ms per interation.", i+1, delay);
                             doDnsQuery(domain);
                             System.Threading.Thread.Sleep(delay);
                         }

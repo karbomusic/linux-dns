@@ -1,7 +1,8 @@
 {
   "profiles": {
     "LinuxDnsQuery": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "karywall.com 100"
     }
   }
 }
