@@ -17,7 +17,6 @@ namespace LinuxDnsQuery
             {
                 switch (args.Length)
                 {
-
                     case 0: // no args
                         doDnsQuery("yahoo.com");
                         break;
