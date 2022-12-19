@@ -39,7 +39,11 @@ Note: You'll want to run two windows terminal instances. One for compiling and c
 
     __chmod 777 ./LinuxDnsQuery__
 
+
+
 - Execute the app. Examples:
+
+Note: If you get a "Couldn't find a valid ICU package" error when executing, run the following command: export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
     __LinuxDnsQuery__ <-- query yahoo.com  
     __LinuxDnsQuery yahoo.com__ <-- query yahoo.com  
