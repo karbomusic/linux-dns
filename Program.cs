@@ -30,12 +30,13 @@ namespace LinuxDnsQuery
                     case 2: // loop per arg values
                         domain = args[0];
                         iterations = Int32.Parse(args[1]);
-                        Console.WriteLine("{0}: Running {1} queries for {2} with no delay...\r\n", DateTime.Now.ToLongTimeString(), iterations, domain);
+                        Console.WriteLine("{0}: Running {1} queries for {2} with no delay...\r\n", GetTimeString(), iterations, domain);
 
                         for (int i = 0; i < iterations; i++)
                         {
-                            Console.Write("{0}: Iteration: {1} ", DateTime.Now.ToLongTimeString(), i);
+                            Console.Write("{0}: Iteration: {1} ", GetTimeString(), i);
                             doDnsQuery(domain);
+                           
                         }
                         break;
 
@@ -44,10 +45,10 @@ namespace LinuxDnsQuery
                         iterations = Int32.Parse(args[1]);
                         delay = Int32.Parse(args[2]);
 
-                        Console.WriteLine("{0}: Running {1} queries for {2} with {3}ms delay...\r\n", DateTime.Now.ToLongTimeString(), iterations, domain, delay);
+                        Console.WriteLine("{0}: Running {1} queries for {2} with {3}ms delay...\r\n", GetTimeString(), iterations, domain, delay);
                         for (int i = 0; i < iterations; i++)
                         {
-                            Console.Write("{0}: Iteration: {1} waiting {2} ms per interation.", DateTime.Now.ToLongTimeString(), i, delay);
+                            Console.Write("{0}: Iteration: {1} waiting {2} ms per interation.", GetTimeString(), i, delay);
                             doDnsQuery(domain);
                             System.Threading.Thread.Sleep(delay);
                         }
@@ -74,6 +75,10 @@ namespace LinuxDnsQuery
             }
         }
 
+        static string GetTimeString()
+        {
+            return DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss.fff tt");
+         }       
         static void doDnsQuery(string hostname = "")
         {
             if (hostname == "")
