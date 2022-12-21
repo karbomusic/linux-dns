@@ -17,7 +17,9 @@ namespace LinuxDnsQuery
             {
                 switch (args.Length)
                 {
+
                     case 0: // no args
+
                         doDnsQuery("yahoo.com");
                         break;
 
@@ -28,11 +30,11 @@ namespace LinuxDnsQuery
                     case 2: // loop per arg values
                         domain = args[0];
                         iterations = Int32.Parse(args[1]);
-                        Console.WriteLine("Running {0} queries for {1} with no delay...\r\n", iterations, domain);
+                        Console.WriteLine("{0}: Running {1} queries for {2} with no delay...\r\n", DateTime.Now.ToLongTimeString(), iterations, domain);
 
                         for (int i = 0; i < iterations; i++)
                         {
-                            Console.Write("Iteration: {0} ", i+1);
+                            Console.Write("{0}: Iteration: {1} ", DateTime.Now.ToLongTimeString(), i);
                             doDnsQuery(domain);
                         }
                         break;
@@ -42,10 +44,10 @@ namespace LinuxDnsQuery
                         iterations = Int32.Parse(args[1]);
                         delay = Int32.Parse(args[2]);
 
-                        Console.WriteLine("Running {0} queries for {1} with {2}ms delay...\r\n", iterations, domain, delay);
+                        Console.WriteLine("{0}: Running {1} queries for {2} with {3}ms delay...\r\n", DateTime.Now.ToLongTimeString(), iterations, domain, delay);
                         for (int i = 0; i < iterations; i++)
                         {
-                            Console.Write("Iteration: {0} waiting {1} ms per interation.", i+1, delay);
+                            Console.Write("{0}: Iteration: {1} waiting {2} ms per interation.", DateTime.Now.ToLongTimeString(), i, delay);
                             doDnsQuery(domain);
                             System.Threading.Thread.Sleep(delay);
                         }
@@ -58,8 +60,8 @@ namespace LinuxDnsQuery
             }
             catch (Exception e)
             {
-                // something went wrong. If we reproduce the issue,
-                // the code will fall into this catch statement.
+                // something went wrong
+
                 Console.WriteLine(e.ToString());
             }
 
@@ -80,11 +82,12 @@ namespace LinuxDnsQuery
             }
 
             Console.WriteLine("Running dns query for {0}", hostname);
-            IPHostEntry result = System.Net.Dns.GetHostByName(hostname);
+            IPHostEntry result = System.Net.Dns.GetHostEntry(hostname);
             foreach (IPAddress addr in result.AddressList)
             {
                 Console.WriteLine("RR: {0}", addr);
             }
+
         }
     }
 }
