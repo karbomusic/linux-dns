@@ -1,6 +1,6 @@
 # linux-dns  
 
-This is a DNS query test app written in .net core v3.1 
+This is a DNS query test app written in .net core v3.1 and .net v6.0 - see binaries folder for direct downloads.
 
 ## Usage:
 
