@@ -17,9 +17,7 @@ namespace LinuxDnsQuery
             {
                 switch (args.Length)
                 {
-
                     case 0: // no args
-
                         doDnsQuery("yahoo.com");
                         break;
 
@@ -36,7 +34,6 @@ namespace LinuxDnsQuery
                         {
                             Console.Write("{0}: Iteration: {1} ", GetTimeString(), i);
                             doDnsQuery(domain);
-                           
                         }
                         break;
 
@@ -46,6 +43,7 @@ namespace LinuxDnsQuery
                         delay = Int32.Parse(args[2]);
 
                         Console.WriteLine("{0}: Running {1} queries for {2} with {3}ms delay...\r\n", GetTimeString(), iterations, domain, delay);
+
                         for (int i = 0; i < iterations; i++)
                         {
                             Console.Write("{0}: Iteration: {1} waiting {2} ms per interation.", GetTimeString(), i, delay);
@@ -62,7 +60,6 @@ namespace LinuxDnsQuery
             catch (Exception e)
             {
                 // something went wrong
-
                 Console.WriteLine(e.ToString());
             }
 
@@ -78,7 +75,8 @@ namespace LinuxDnsQuery
         static string GetTimeString()
         {
             return DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss.fff tt");
-         }       
+        }       
+
         static void doDnsQuery(string hostname = "")
         {
             if (hostname == "")
@@ -92,7 +90,6 @@ namespace LinuxDnsQuery
             {
                 Console.WriteLine("RR: {0}", addr);
             }
-
         }
     }
 }
